@@ -13,7 +13,7 @@ public interface LawyerService {
 
     Lawyer findById(Long id);
 
-    void delateById(Long id);
+    void deleteById(Long id);
 
     List<Lawyer> findAll();
 
