@@ -1,16 +1,17 @@
 package com.example.findyourlaw.service;
 
 import com.example.findyourlaw.entity.Costumer;
+import com.example.findyourlaw.exeption.UserNotFoundException;
 
 public interface CostumerService {
 
-    Costumer createCostumer(Costumer costumer);
+    void createCostumer(Costumer costumer);
 
-    Costumer updateCostumer(Costumer costumer);
+    void updateCostumer(Costumer costumer) throws UserNotFoundException;
 
-    Costumer findByEmail(String email);
+    Costumer findByEmail(String email) throws UserNotFoundException;
 
-    Costumer findById(Long Id);
+    Costumer findById(Long Id) throws UserNotFoundException;
 
     void deleteById(Long Id);
 }

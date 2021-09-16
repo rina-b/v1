@@ -1,17 +1,22 @@
 package com.example.findyourlaw.service;
 
+import com.example.findyourlaw.entity.Costumer;
+import com.example.findyourlaw.entity.Lawyer;
 import com.example.findyourlaw.entity.Location;
+import com.example.findyourlaw.exeption.EntityDoesNotExistException;
+
 
 public interface LocationService {
-    Location createLocation(Location location);
 
-    Location updateLocation(Location location);
+    void createLocation(Location location);
 
-    Location findById(Long id);
+    void updateLocation(Location location) throws EntityDoesNotExistException;
+
+    Location findById(Long id) throws EntityDoesNotExistException;
 
     void deleteById(Long id);
 
-    Location findByLawyerId(Long lawyerId);
+    Location findByLawyer(Lawyer lawyer) throws EntityDoesNotExistException;
 
-    Location findByClientId(Long clientId);
+    Location findByClient(Costumer client) throws EntityDoesNotExistException;
 }

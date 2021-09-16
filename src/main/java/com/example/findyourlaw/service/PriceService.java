@@ -1,15 +1,16 @@
 package com.example.findyourlaw.service;
 
 import com.example.findyourlaw.entity.Price;
+import com.example.findyourlaw.exeption.EntityDoesNotExistException;
 
 public interface PriceService {
-    Price createPrice(Price price);
+    void createPrice(Price price);
 
-    Price updatePrice(Price price);
+    void updatePrice(Price price) throws EntityDoesNotExistException;
 
-    Price findById(Long id);
+    Price findById(Long id) throws EntityDoesNotExistException;
 
-    Price findByLawyerId(Long id);
+    Price findByLawyerId(Long id) throws EntityDoesNotExistException;
 
     void deleteById(Long id);
 }

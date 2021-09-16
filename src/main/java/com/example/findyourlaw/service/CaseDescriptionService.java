@@ -1,15 +1,16 @@
 package com.example.findyourlaw.service;
 
 import com.example.findyourlaw.entity.CaseDescription;
+import com.example.findyourlaw.exeption.EntityDoesNotExistException;
 
 public interface CaseDescriptionService {
-    CaseDescription createDescription(CaseDescription description);
+    void createDescription(CaseDescription description);
 
-    CaseDescription updateDescription(CaseDescription description);
+    void updateDescription(CaseDescription description) throws EntityDoesNotExistException;
 
-    CaseDescription findDescriptionById(Long id);
+    CaseDescription findDescriptionById(Long id) throws EntityDoesNotExistException;
 
-    CaseDescription findDescriptionByCostumerId(Long id);
+    CaseDescription findDescriptionByCostumerId(Long id) throws EntityDoesNotExistException;
 
     void deleteDescriptionById(Long id);
 }
