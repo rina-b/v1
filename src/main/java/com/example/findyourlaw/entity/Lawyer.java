@@ -40,10 +40,6 @@ public class Lawyer {
     @JoinColumn(name = "location_id")
     private Location location;
 
-    @OneToMany(mappedBy = "lawyer", orphanRemoval = true, cascade = CascadeType.REMOVE)
-    private List<Mark> marks;
-
-
     public Lawyer() {}
 
     public Lawyer(String email, String name, String phoneNumber, Degree degree,
@@ -56,14 +52,6 @@ public class Lawyer {
         this.workExperience = workExperience;
         this.price = price;
         this.location = location;
-    }
-
-    public List<Mark> getMarks() {
-        return marks;
-    }
-
-    public void setMarks(List<Mark> marks) {
-        this.marks = marks;
     }
 
     public Location getLocation() {
@@ -137,12 +125,12 @@ public class Lawyer {
         if (this == o) return true;
         if (!(o instanceof Lawyer)) return false;
         Lawyer lawyer = (Lawyer) o;
-        return email.equals(lawyer.email) && name.equals(lawyer.name) && phoneNumber.equals(lawyer.phoneNumber) && degree == lawyer.degree && Objects.equals(workExperience, lawyer.workExperience) && branchOfLaw == lawyer.branchOfLaw && Objects.equals(price, lawyer.price) && Objects.equals(location, lawyer.location) && Objects.equals(marks, lawyer.marks);
+        return email.equals(lawyer.email) && name.equals(lawyer.name) && phoneNumber.equals(lawyer.phoneNumber) && degree == lawyer.degree && Objects.equals(workExperience, lawyer.workExperience) && branchOfLaw == lawyer.branchOfLaw && Objects.equals(price, lawyer.price) && Objects.equals(location, lawyer.location);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(email, name, phoneNumber, degree, workExperience, branchOfLaw, price, location, marks);
+        return Objects.hash(email, name, phoneNumber, degree, workExperience, branchOfLaw, price, location);
     }
 
     @Override
@@ -156,7 +144,6 @@ public class Lawyer {
                 ", branchOfLaw=" + branchOfLaw +
                 ", price=" + price +
                 ", location=" + location +
-                ", marks=" + marks +
                 '}';
     }
 }

@@ -29,10 +29,6 @@ public class Costumer {
     private Location location;
 
 
-
-    @OneToMany(mappedBy = "costumer", orphanRemoval = true)
-    private List<Mark> marks;
-
     @OneToMany(mappedBy = "costumer", cascade = CascadeType.REMOVE, orphanRemoval = true)
     private List<CaseDescription> caseDescriptions;
 
@@ -54,13 +50,6 @@ public class Costumer {
         this.caseDescriptions = caseDescriptions;
     }
 
-    public List<Mark> getMarks() {
-        return marks;
-    }
-
-    public void setMarks(List<Mark> marks) {
-        this.marks = marks;
-    }
 
     public Location getLocation() {
         return location;
@@ -107,12 +96,12 @@ public class Costumer {
         if (this == o) return true;
         if (!(o instanceof Costumer)) return false;
         Costumer costumer = (Costumer) o;
-        return id.equals(costumer.id) && name.equals(costumer.name) && email.equals(costumer.email) && role == costumer.role && Objects.equals(location, costumer.location) && Objects.equals(marks, costumer.marks) && Objects.equals(caseDescriptions, costumer.caseDescriptions);
+        return id.equals(costumer.id) && name.equals(costumer.name) && email.equals(costumer.email) && role == costumer.role && Objects.equals(location, costumer.location) && Objects.equals(caseDescriptions, costumer.caseDescriptions);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, email, role, location, marks, caseDescriptions);
+        return Objects.hash(id, name, email, role, location,  caseDescriptions);
     }
 
     @Override
@@ -123,7 +112,6 @@ public class Costumer {
                 ", email='" + email + '\'' +
                 ", role=" + role +
                 ", location=" + location +
-                ", marks=" + marks +
                 ", caseDescriptions=" + caseDescriptions +
                 '}';
     }
