@@ -4,7 +4,9 @@ import com.example.findyourlaw.entity.CaseDescription;
 import com.example.findyourlaw.exeption.EntityDoesNotExistException;
 import com.example.findyourlaw.repositories.CaseDescriptionRepository;
 import com.example.findyourlaw.service.CaseDescriptionService;
+import org.springframework.stereotype.Service;
 
+@Service
 public class CaseDescriptionServiceImpl implements CaseDescriptionService {
     private final CaseDescriptionRepository caseDescriptionRepository;
 

@@ -4,7 +4,9 @@ import com.example.findyourlaw.entity.Price;
 import com.example.findyourlaw.exeption.EntityDoesNotExistException;
 import com.example.findyourlaw.repositories.PriceRepository;
 import com.example.findyourlaw.service.PriceService;
+import org.springframework.stereotype.Service;
 
+@Service
 public class PriceServiceImpl implements PriceService {
     private final PriceRepository priceRepository;
 

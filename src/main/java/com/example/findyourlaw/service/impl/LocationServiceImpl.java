@@ -6,7 +6,10 @@ import com.example.findyourlaw.entity.Location;
 import com.example.findyourlaw.exeption.EntityDoesNotExistException;
 import com.example.findyourlaw.repositories.LocationRepository;
 import com.example.findyourlaw.service.LocationService;
+import org.springframework.stereotype.Service;
 
+
+@Service
 public class LocationServiceImpl implements LocationService {
     private final LocationRepository locationRepository;
 

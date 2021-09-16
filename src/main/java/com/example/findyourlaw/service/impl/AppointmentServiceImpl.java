@@ -4,7 +4,9 @@ import com.example.findyourlaw.entity.Appointment;
 import com.example.findyourlaw.exeption.NoSuchAppointmentException;
 import com.example.findyourlaw.repositories.AppointmentRepository;
 import com.example.findyourlaw.service.AppointmentService;
+import org.springframework.stereotype.Service;
 
+@Service
 public class AppointmentServiceImpl implements AppointmentService {
     private final AppointmentRepository appointmentRepository;
 

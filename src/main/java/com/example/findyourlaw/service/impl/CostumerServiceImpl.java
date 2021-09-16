@@ -4,7 +4,9 @@ import com.example.findyourlaw.entity.Costumer;
 import com.example.findyourlaw.exeption.UserNotFoundException;
 import com.example.findyourlaw.repositories.CostumerRepository;
 import com.example.findyourlaw.service.CostumerService;
+import org.springframework.stereotype.Service;
 
+@Service
 public class CostumerServiceImpl implements CostumerService {
     private final CostumerRepository costumerRepository;
 

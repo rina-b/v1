@@ -4,9 +4,11 @@ import com.example.findyourlaw.entity.Lawyer;
 import com.example.findyourlaw.exeption.UserNotFoundException;
 import com.example.findyourlaw.repositories.LawyerRepository;
 import com.example.findyourlaw.service.LawyerService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class LawyerServiceImpl implements LawyerService {
     private final LawyerRepository lawyerRepository;
 
